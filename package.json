@@ -1,0 +1,30 @@
+{
+  "name": "jadetrans",
+  "version": "0.0.3",
+  "description": "transform jade to svn or git",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "jade",
+    "transform"
+  ],
+  "dependencies": {
+    "walkfiles": "0.0.1",
+    "commander": "latest"
+  },
+  "author": {
+    "name": "supersky07",
+    "email": "supersky07@gmail.com",
+    "url": ""
+  },
+  "bin": {
+    "jadetrans": "bin/cmd.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT"
+}

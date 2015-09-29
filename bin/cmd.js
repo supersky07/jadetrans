@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+/*
+ * -h, --help
+ * -v, --version
+ * -s, --string
+ * path
+ * desPath
+ */
+
+var program = require('commander');
+var doCommit = require('../index');
+ 
+program
+  .version(require('../package.json').version)
+  .option('-p, --path [transformPath]', 'transform path', 'default')
+  .option('-r, --reg [reg]', 'reg', '')
+  .parse(process.argv);
+
+if (program.path){
+    var tempPath = program.path == 'default' ? '' : program.path;
+    doCommit(tempPath, program.reg);   
+}
