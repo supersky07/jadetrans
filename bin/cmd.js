@@ -13,10 +13,9 @@ var doCommit = require('../index');
 program
   .version(require('../package.json').version)
   .option('-p, --path [transformPath]', 'transform path', 'default')
-  .option('-r, --reg [reg]', 'reg', '')
   .parse(process.argv);
 
 if (program.path){
     var tempPath = program.path == 'default' ? '' : program.path;
-    doCommit(tempPath, program.reg);   
+    doCommit(tempPath);   
 }

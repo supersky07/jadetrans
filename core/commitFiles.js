@@ -19,7 +19,7 @@ if (isWin) {
     md5file = osTempdir + '\\' + 'md5Mapping.txt';
 }
 
-module.exports = function (path, reg) {
+module.exports = function (path) {
 	//判断path是否是_views下的目录
 	if (path.indexOf('_views') == -1) {
 		console.log('Error:')

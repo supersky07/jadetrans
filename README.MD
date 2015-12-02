@@ -1,5 +1,7 @@
 # jadeTransform for RIA
 
+# Just for us
+
 # install
 	npm install jadetrans - g
 
@@ -7,7 +9,6 @@
 	Usage: jadetrans {options}
 	Standard Options:
 		--path, -p the path you want to transform.
-		--reg, -r not support.
 
 # example
 	var test = require('jadetrans');
@@ -16,6 +17,10 @@
 	or
 
 	jadetrans -p 'some path'
+
+	or 
+
+	jadetrans
 
 # Tips
 	- The path can be a directory or a file.
