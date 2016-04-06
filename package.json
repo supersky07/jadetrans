@@ -1,6 +1,6 @@
 {
   "name": "jadetrans",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "transform jade to svn or git",
   "main": "index.js",
   "scripts": {
