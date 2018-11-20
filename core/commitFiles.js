@@ -104,7 +104,7 @@ var transformAllFiles = function (package_json) {
 
 		var opts = {
 			hostname : package_json.hostname,
-			port     : '3000',
+			port     : '3003',
 			path     : '/jadeFileSubmit?filePath='+encodeURIComponent(jadeFilePath)+
 									'&proName='+package_json.name+
 									'&phpSvnPath='+package_json.phpSvnPath+
@@ -165,7 +165,7 @@ var transformSingleFile = function (package_json) {
 
 	var opts = {
 		hostname : package_json.hostname,
-		port     : '3000',
+		port     : '3003',
 		path     : '/jadeFileSubmit?filePath='+encodeURIComponent(jadeFilePath)+
 								'&proName='+package_json.name+
 								'&newWebos='+package_json.newWebos+

@@ -5,18 +5,32 @@ var commitFiles = require('./core/commitFiles.js');
 
 module.exports = doTransform;
 
-function doTransform (target_path) {
-	if (!target_path || target_path == '') {
-		//获取当前目录
-		target_path = process.cwd();
+function doTransform (target_path_arr) {
+	if (target_path_arr.length === 0) {
+		temp_path = process.cwd();
+
+		commitFiles(temp_path);
+		return;
 	}
 
-	//处理相对路径的情况
-	target_path = path.normalize(target_path);
+	for (var i = 0; i < target_path_arr.length; i++) {
+		var temp_path = target_path_arr[i];
 
-	if (!target_path.match(/^\//)) {
-		target_path = process.cwd() + '/' + target_path;
+		if (!temp_path.match(/^[\.\\/]/)) {
+			temp_path = './' + temp_path;
+		}
+
+		//处理相对路径的情况
+		temp_path = path.normalize(temp_path);
+
+		if (!temp_path.match(/^\//)) {
+			temp_path = process.cwd() + '/' + temp_path;
+		}
+
+		if (temp_path.indexOf('jadetrans') > -1) {
+			continue;
+		}
+
+		commitFiles(temp_path);
 	}
-
-	commitFiles(target_path);
 };

@@ -15,7 +15,8 @@ program
   .option('-p, --path [transformPath]', 'transform path', 'default')
   .parse(process.argv);
 
-if (program.path){
-    var tempPath = program.path == 'default' ? '' : program.path;
-    doCommit(tempPath);   
+if (program.path !== 'default'){
+    doCommit([program.path]);   
+} else {
+    doCommit(process.argv);
 }
